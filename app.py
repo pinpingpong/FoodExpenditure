@@ -24,7 +24,7 @@ def index():
         print(income)
         model1 = joblib.load("FOOD_REG")
         pred1 = model1.predict([[income]])
-        str1 = "The prediction for your Food Expenditure based on your income using Regression is : " + str(pred1[0][0])
+        str1 = f"The prediction for your Food Expenditure based on your income using Regression is : {pred1[0][0]:.2f}"
         return(render_template("index.html", result1=str1))
     else:
         return(render_template("index.html", result1="Your result will be shown here"))
